@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Random number</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<style type="text/css">
+
+		body{
+			background: skyblue;
+		}
+
+		#div {
+			background: #fff;
+			width: 30%;
+			border-radius: 30px;
+			padding: 35px;
+			margin: 150px auto;
+			text-align: center;
+		}
+
+		.instruction {
+			font-family: sans-serif helvetica;
+			font-size: 19px;
+			color: deepskyblue;
+		}
+
+		input{
+			width: 270px;
+			height: 40px;
+			border-radius: 7px;
+			border: 1px solid deepskyblue;
+			padding: 0 10px;
+			margin-bottom: 10px;
+		}
+
+		button{
+			background: deepskyblue;
+			margin-top: 11px;
+			color: #fff;
+			padding: 10px 20px;
+			width: 290px;
+			border-radius: 10px;
+		}
+
+		.text {
+			font-size: 21px;
+			text-align: left;
+			margin-left: 50px;
+		}
+
+		.result {
+			font-size: 27px;
+			text-align: center;
+		}
+
+		#error {
+			margin: 10px auto;
+			color: #fff;
+			font-size: 21px;
+			font-family: roboto;
+			background: red;
+			padding: 5px 2px;
+			border-radius: 10px;
+			width: 70%;
+		}
+
+		.attempt_left {
+			color: red;
+		}
+
+		.attempt-span {
+			font-size: 18px;
+			padding: 30px;
+			color: darkblue;
+		}
+		#but, #menuButton{
+			background: blue;
+			margin-top: 11px;
+			color: #fff;
+			padding: 10px 15px;
+			width: 140px;
+			border-radius: 10px;
+			font-size: 15px;
+		}
+	</style>
+</head>
+<body>
+	<div id="div">
+		<div id="container">
+			<!-- Settings -->
+			<div class="settings">
+				<form id="settings-form">
+					<h4 class="instruction">Please fill the following fields</h4>
+					<p id="error" style="display: none"></p>
+					<input type="text" placeholder="Enter your nickname" class='input' id="nickname"><br>
+					<input type="text" placeholder="Minimum range" class='input' id="minRange"><br>
+					<input type="text" placeholder="Maximum range" class='input' id="maxRange"><br>
+					<input type="text" placeholder="Number of attempts" class='input' id="attempt"><br>
+					<button type="submit" id="button">Continue</button>
+				</form>
+			</div>
+
+			<!-- Task -->
+			<div class="task-wrapper" style="display: none; margin-top: 10px;">
+				<span class="instruction" id="instruction"></span><br>
+				<span class="attempt-span">Attempt left: <b class="attempt_left"></b></span><br><br>
+				<form id="form">
+					<input type="text" required placeholder="Enter number" id="input"><br>
+					<button type="submit" id="button">Enter</button>
+				</form>
+				<div id="guesses">
+					<p id="compGuess" class="text"></p> <!-- show computer guess -->
+					<p id = 'par' class="text"></p>  <!-- show user guess -->
+				</div>
+			</div>
+
+		</div>
+		<!--result paragraph-->
+		<p id="result" class="result"></p>
+		<!--restart button-->
+		<button type="button" id="but">Restart</button>
+		<!--Menu button-->
+		<button type="button"  id="menuButton" style="display:none">Menu</button>
+	</div>
+
+	<script type="text/javascript">
+
+		//Setting 
+		var highest //number of attempt
+		var max
+		var min
+		var nickname
+		$('#but').hide()
+		$('#settings-form').on('submit', function(event){
+			event.preventDefault();
+			//getting user input
+			nickname = $("#nickname").val(); //number of attempt
+			highest = parseInt($("#attempt").val()); //number of attempt
+			max = parseInt($("#maxRange").val());  //Max range
+			min = parseInt($("#minRange").val());     //Min range
+			//Check if all field are filled
+			if(nickname == "" || highest =="" || max == "" || min == ""){
+				$("#error").text("Please fill all fields").fadeIn()
+				$('.input').on('keyup',function () {
+					// body...
+					$("#error").hide()
+				})
+			}
+			//check if nickname is a string i.e not a number
+			else if(!isNaN(nickname)){
+				$("#error").text("Please enter a valid nickname").fadeIn()
+			}
+			//Check the length of nickname - it should not be more than 8 characters
+			else if(nickname.length > 8){
+				$("#error").text("Nickname cannot be more than 8 characters").fadeIn()
+			}
+			//check if attempt, min and max are number
+			else if(isNaN(highest) || isNaN(min) || isNaN(max)){
+				$("#error").text("The inputs should be numbers").fadeIn()
+			}
+			else if(min >= max){
+				$("#error").text("Invalid min or max value").fadeIn()
+			}
+			else{
+				//Hide settings form
+				$(".settings").fadeOut('slow')
+				//show task form
+				$(".task-wrapper").fadeIn('slow')
+				//
+				$("#instruction").text("Guess a number between "+min+" and "+ max) // set instruction
+				$(".attempt_left").text(highest) // set attempt
+			}
+			
+
+		});
+
+		var a = 0  //counter
+		var correct = false
+		
+		$('#form').on('submit', function(event){
+			event.preventDefault();		
+			//Computer random number
+			var randNum = Math.ceil(Math.random() * (max-min) + min)
+			//User guess
+			var user_guess = $('#input').val()
+			//CHECKING CONDITIONS
+			//is user guess a number?
+
+			if(isNaN(user_guess)){
+				//error
+				a++ //increment counter by 1
+				$(".attempt_left").text(highest-a) // reset attempt
+				timeout("Please type only numbers.", 'red', 100)
+			}
+			//Is user guess wrong?
+			else if(user_guess != randNum){
+				a++  //increment counter by 1
+				$(".attempt_left").text(highest-a) // reset attempt
+				//show guesses div
+				$("#guesses").show();
+				//show computer guess
+				$("#compGuess").html("Comp Guess: <span style='color: green; font-size:22px'>"+randNum+"</span>")
+				//show user guess
+				timeout("Wrong! You guessed: "+user_guess, 'red', 100)
+			}
+			else{
+				a++ //increment counter by 1
+				correct = true	
+
+			}
+
+			//check for result
+			if(a == highest && correct == false){
+				//error
+				$(".task-wrapper").hide()
+				//Show result
+				$("#result").show();
+				$("#result").text("Ooops! "+nickname+" You've exhausted your chances").css('color', 'red')
+				//restart button
+				$('#but, #menuButton').show()
+				$('#but').on('click',function(){
+					restartTask() //calling a function
+				})
+				$('#menuButton').on('click',function(){
+					location.href='Duplicate.html'
+				})
+						
+			}
+			if(correct == true){
+				$(".task-wrapper").hide()
+				//Show result
+				$("#result").show();
+				$("#result").text("Great! "+nickname+", Your guess: "+user_guess+ ", Computer Guess: "+randNum+", You won in "+a+ " attempts").css('color', 'green')
+				//show restart button
+				$('#but, #menuButton').show()
+				//restart button
+				$('#but').on('click',function(){
+					restartTask() //calling a function
+				})
+				//menu buttton
+				$('#menuButton').on('click',function(){
+					location.href='Duplicate.html'
+				})
+			}
+		});
+
+		//timeout function
+		function timeout(text, color, time){
+			setTimeout(function(){
+				$("#par").text(text).css('color', color)
+			}, time)
+		}
+
+		//Restart a task function
+		function restartTask(){
+			//location.href ='duplicate.html'  //To reload this page and start all over again
+			//Hide result
+			$("#result").hide();
+			//reset counter back to 0
+			a = 0
+			$(".attempt_left").text(highest) // reset attempt
+			//hide some text
+			$("#guesses").hide();
+			//set correct back to false
+			correct = false;
+			//hide restart & Menu button
+			$("#but,#menuButton").hide()
+			//clear input value
+			$("#input").val("")
+			//bring in the task again
+			$(".task-wrapper").fadeIn('slow')
+		}
+
+		//showContent
+		function showcontent(id){
+			$(id).hide()
+		}
+		
+	</script>
+</body>
+</html>

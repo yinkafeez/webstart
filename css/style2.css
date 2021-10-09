@@ -1,0 +1,307 @@
+                    //   First Project
+body{
+	background: lightgreen;
+}
+div.container{
+	background:white;
+	width: 27%;
+	padding: 30px;
+	border-radius: 20px;
+	margin: 140px auto;
+}
+
+div.topic{
+	font-size: 22px;
+	font-weight: bolder;
+	color: black;
+	font-family: arial;
+}
+div.sub-title{
+	font-size: 13px;
+	color: grey;
+	font-family: verdana;
+	padding-top: 3px;
+}
+div.button{
+	display: flex;
+	flex-wrap: wrap;
+}
+button.button1{
+	border-radius: 12px;
+	color: white;
+	background: skyblue;
+	border-color: white;
+	padding-left: 17px;
+	padding-right: 17px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size: 11px;
+}
+.button2{
+	border-radius: 12px;
+	color: white;
+	background: #ee3333;
+	border-color: white;
+	padding-left: 17px;
+	padding-right: 17px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size: 11px;
+}
+.button3{
+	border-radius: 12px;
+	color: white;
+	background: lightgreen;
+	border-color: white;
+	padding-left: 17px;
+	padding-right: 17px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size: 11px;
+}
+input.form1{
+	border-color: grey;
+	border-width: 1px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top:2px;
+	padding-bottom: 2px;
+}
+.list{
+	padding-top: 35px;
+	padding-left: 45px;
+}
+div.button{
+	margin-left: 32px;
+	padding-top: 15px;
+}
+.form{
+    padding-top: 12px;	
+}
+span.list{
+	text-decoration: line-through;
+	padding-left: 0px;
+}
+hr{
+	padding-top: 5px;
+	margin-top: 17px;
+	background-color: black;
+}
+
+
+                        //  Second Project
+.body1{
+	background: lightskyblue;
+}
+.sub-container{
+	background: white;
+	margin: 10px 60px 0px;
+}
+div.head{
+	font-size: 17px;
+	color:black;
+	font-weight: bolder;
+	font-family: arial;
+margin-left:410px;
+}
+div.heading{
+	padding-top: 25px;
+	padding-left:195px
+}
+div.form1{
+	padding-left:275px
+}
+div.form-text{
+	margin-left: 25px;
+}
+span.age{
+	padding-left:10px
+}
+select.box{
+	padding-right: 120px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	background: white;
+	border-color: grey;
+}
+input.box{
+	margin-left:15px
+	padding-right: 180px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+select.box2{
+	margin-left: 13px;
+	padding: 3px 0px 3px;
+	background-color: whitesmoke;
+}
+span.text{
+	margin-left: 35px;
+}
+span.text1{
+	padding-left: 125px;
+}
+input.text2{
+	margin-left: 315px;
+}
+span.text3{
+	padding-left: 100px;
+}
+select.box3{
+	margin-left: 13px;
+	padding: 3px 0px 3px;
+	background-color: whitesmoke;
+}
+
+                        //  Third Project
+.body2{
+	background: skyblue;
+}
+div.container3{
+	background-color: lightskyblue;
+}
+.sub-container2{
+	background: paleturquoise;
+  margin: 140px auto;
+  padding: 15px;
+  width: 70%;
+  padding-bottom: 50px;
+  border: 3px solid grey;
+}
+div.heading1{
+	color: blue;
+	font-size:25px;
+	text-align: center;
+}
+.text-head{
+	background-color: blue;
+	border-radius: 12px;
+	padding: 12px;
+	color: white;
+	margin-top: 6px;
+}
+.input{
+	display: flex;
+	flex-wrap: wrap;
+}
+.input span{
+  width: 45%;
+  background: white;
+  margin: 12px;
+  border-radius: 15px;
+  padding: 10px;
+}
+button{
+	border-radius: 15px;
+	background-color: magenta;
+  margin-top: -6px;
+  margin-right: 10px;
+
+}
+.button4{
+	width: 35%;
+	float: right;
+	padding-right: 20px;
+	padding: 5px;
+}
+
+                             /*-----Fourth Project-------*/
+.body3{
+	background-color: black;
+}
+div.heading{
+	margin-left: 150px;
+	display: flex;
+}
+img{
+	width: 30px;
+	height: 26px;
+	border-radius: 20px;
+}
+span.heading{
+	color: white;
+	font-size: 12px;
+	font-family: arial;
+	margin-left: 5px;
+	margin-bottom: 7px;
+	margin-top: 6px;
+	font-weight: bolder;
+}
+.form2{
+	margin-left: 280px;
+	margin-top: 18px;
+}
+b{
+	color: white;
+	font-family: arial;
+	font-size: 8px;
+}
+input.form{
+  background: black;
+  padding: 2px 66px 2px;
+  border-color: whitesmoke;
+}
+button.button5{
+	color: white;
+	background-color: blue;
+	text-align: center;
+	padding: 3px 135px 3px;
+  border-radius: 0px;
+  border: 1px solid blue;
+  font-size: 10px;
+  font-family: arial;
+}
+div.text{
+	color: blue;
+	margin: 35px 320px 0px;
+	font-size: 11px;
+	font-family: arial;
+	
+}
+.hr {
+	border-bottom: 1px solid grey;
+	padding-bottom: 8px;
+	margin-top: 8px;
+	margin-right: 768px;
+	margin-left: 280px;
+}
+span.item1{
+	margin-left: 70px;
+}
+span.item2{
+	margin-left: 35px;
+}
+div.button6{
+	margin-left: 280px;
+	margin-top: 20px;
+}
+button.button6{
+  color: white;
+	background-color: grey;
+	text-align: center;
+	padding: 3px 109px 3px;
+  border-radius: 0px;
+  border: 1px solid grey;
+  font-size: 10px;
+  font-family: arial;
+}
+div.bottom{
+	color: grey;
+	font-size: 11px;
+	font-family: arial;
+}
+div.bottom{
+	margin: 35px 320px;
+	font-size: 8px;
+	font-family: arial;
+}
+div.bot{
+	margin-top: 5px ;
+	margin-left: 55px;
+}
+span.bottom2{
+	text-decoration: underline;
+}
+span.bottom3{
+	text-decoration: underline;
+}

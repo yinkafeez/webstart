@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Practice_loop</title>
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<style type="text/css">
+		#input{
+			border-color:grey
+		}
+		#button{
+			background: blue;
+			color: white;
+			margin-left: 129px;
+		}
+	</style>
+</head>
+<body>
+	<div id="div">
+		<input type="text" placeholder="Enter password" id="input"><br>
+		<button type="button" id="button">Enter</button><br><br><br>
+		<p id="par"></p>
+	</div>
+	<p id="success"></p>
+	<script type="text/javascript">
+		//document.write("Random- "+Math.random(10))
+		//document.write(valueOf(3))
+		var j = 0;
+		var correct = false
+		var highest = 5
+		$('#button').on('click',function(){
+			//
+			var inp =$('#input').val()
+			var inpLen = inp.length
+			
+			//
+			$("#par").slideDown(1000)
+			$("#par").text("Please wait...").css('color', 'blue')
+			//
+				
+				if(inpLen == 0){
+					//error
+					timeout("Please type something. You have "+(highest-j)+" remaining", 'red', 500)
+					//j++
+				}
+				else if(isNaN(inp)){
+					//error
+					timeout("Please type only numbers You have "+(highest-(1+j))+" remaining", 'red', 500)
+					j++
+				}
+
+				else if(inpLen != 6){
+					//error
+					timeout("You have typed a wrong input You have "+(highest-(1+j))+" remaining", 'red', 1000)
+					j++
+				}
+				else{
+					//success
+					timeout("You ar correct", 'green', 1000)
+					j++
+					correct = true
+					//break
+				}
+
+
+				if(j == 5 && correct == false){
+					$("#div").hide()
+					$("#success").html("<h1 style='text-align:center; color:red'>Ooops! You've exhausted your chances</h1>")
+				}
+
+				if(correct == true){
+					$("#div").hide()
+					$("#success").html("<h1 style='text-align:center; color:green'>Great! You won in "+j+ " attempts</h1>")
+				}
+			
+			
+		})
+		//
+
+		$('#input').on('keyup',function(){
+			$("#par").slideUp(300)
+		})
+
+		function timeout(text, color, time){
+			setTimeout(function(){
+				$("#par").text(text).css('color', color)
+			}, time)
+		}
+</script>
+</body>
+</html>

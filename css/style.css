@@ -1,0 +1,208 @@
+button.second{
+	background: white;
+	color:black;
+	font-size: 17px;
+} 
+
+button.first{
+	border-color: black;
+	color: blue;
+	font-size: 13px;
+	background: yellow
+}
+
+h1.second {
+	background-color: blue;
+	color:yellow;
+	font-size: 22;
+	font-family:lucida calligraphy;
+}
+
+a{
+	text-decoration: none;
+}
+div.images{
+	display-position: center;
+	display-size: cover;
+}
+h1.first {
+	color: blue;
+	font-family:lucida calligraphy;
+	margin-left: 290px;
+	margin-top: 30px
+}
+
+h4.first{
+	background: purple;
+	color: white;
+	text-align: center;
+	margin-top: 115px
+}
+
+h4.second{
+	font-family: lucida calligraphy;
+	margin-left: 290px;
+}
+
+div.heading{
+	color: blue;
+	text-decoration: underline;
+}
+
+div.h1{
+	color:black;
+	font-size: 20px;
+	margin-left: 167px
+}
+
+div.j{
+	margin-left: 117px;
+	color: black;
+	font-size: 20px;
+}
+
+div.h{
+	margin-left: 147px;
+	color: black;
+	font-size: 20px; 
+}
+
+div.table{
+	margin-left: 95px;
+	border-color: black;
+}
+
+div.heading3{
+	text-align: center;
+	font-size: 25px; 
+	font-family:lucida calligraphy;
+	color: red;
+}
+
+div.text-head{
+	margin-left:220px;
+	color: blue;
+	font-size: 20px;
+}
+
+div.text-box{
+	margin-left:250px;
+}
+
+div.three{
+	color: red;
+	font-family: verdana;
+}
+
+button.enter{
+	margin-left: 260px;
+	color:black;
+	background:white ;
+	font-size: 20px;
+	border-color: blue;
+}
+
+div.top-right{
+	margin: 13px;
+	float:right;
+	font-size: 20px;
+	color: blue;
+	background: yellow;
+}
+
+div.top-left{
+	margin: 13px;
+	float:right;
+	font-size: 20px;
+	color: blue;
+	background: yellow;
+}
+
+div.number{
+	color: red;
+	font-family:lucida calligraphy;
+ }
+
+body.one{
+	background: papayawhip;
+}
+
+body.two{
+	background: papayawhip;
+}
+
+body.four{
+	background-color: papayawhip;
+}
+
+b.one{
+	color: red;
+}
+
+b.two{
+	color: red;
+	text-decoration: underline;
+}
+
+b.number3{
+	color: green;
+}
+
+
+div.head{
+	font-family: century gothic;
+	margin-left: 290px;
+}
+
+div.head2{
+	font-family: century gothic;
+	font-size: 18px;
+	margin-left: 250px;
+	color: black;
+}
+
+div.head3{
+	margin-left: 280px;
+	font-family: arial;
+	font-size: 18px;
+	margin-left: 280px;
+}
+
+div.head4{
+	margin-left: 263px;
+	font-family:arial;
+	font-size: 15px;
+}
+
+input.first-box{
+	margin-left: 200px;
+    padding-top: 10px;
+    padding-right: 79px;
+    padding-bottom: 8px;
+    padding-left: 5px;
+}
+
+button.second-box{
+	margin-left: 460px;
+	color: white;
+	background:blue;
+	font-size: 15px;
+	border: white;
+	width: 58px;
+	height: 27px;
+	border-radius: 4px;
+}
+
+b.a{
+	color: blue;
+}
+
+b.b{
+	color: red;
+}
+
+b.c{color: yellow;
+}
+
+b.d{color: green;
+}

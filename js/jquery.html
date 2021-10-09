@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+	<script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+	<button id="btn">Padding left</button><br>
+	<input type="text" id="inp" data-hty="35" name="">
+	<br><br>
+	<p id="par" class="par">Original Text</p>
+	<img src="../images/img3.jpg" id="img" width="120px" height="75px">
+	<button id="hide">Hide</button>
+	<p id="par" class="par">Original Text</p>
+	<button id="show">Show</button>
+	<br><br>
+	<p id="par" class="par">Original Text</p>
+	<button id="writeText">Write Text</button><br><br>
+	<select id="sel">
+		<option value="ada">Ada</option>
+		<option value="iree">Iree</option>
+		<option value="aagba">Aagba</option>
+	</select><br>
+	<span>Town: <b id="town"></b></span>
+	<br><br><br>
+
+	<img src="../images/img3.jpg" id="img1" width="120px" height="75px"><br>
+	<button id="paddingLeft">Padding Left</button>
+	<button id="paddingRight">Padding Right</button>
+	<br><br><br><br>
+	<input type="text" id="input">
+	<button id="enter">Enter</button>
+	<p class="pa">write text</p>
+	<p class="pa">write text</p>
+	<p class="pa">write text</p>
+	<p class="pa">write text</p>
+	<p class="pa">write text</p>
+	<p class="pa">write text</p>
+	<script type="text/javascript">
+		$("#btn").on('click', function(){
+			//console.log($("#inp").val())
+			$("#inp").val(67)
+			var hty = $("#inp").data('hty')
+			console.log(hty)
+		})
+
+		$("#hide").on('click', function(){
+			$("#img").hide();
+		})
+
+		$("#show").on('click', function(){
+			$("#img").show();
+		})
+
+		$("#writeText").on('click', function(){
+			$("#par").css('color', 'red')
+		})
+
+		$("#inp").on('keyup', function(){
+			var value = $(this).val()
+			$(".par").text(value)
+		})
+
+
+		$("#sel").on('change', function(){
+			var value = $(this).find('option:selected').val()
+			//console.log(value)
+			$("#town").text(value)
+		})
+		var pd=0
+		$("#paddingLeft").on("click",function(){
+			pd +=10
+			$('#img1').css('padding-left', +pd+'px')
+		})
+		$('#paddingRight').on('click',function(){
+			pd -=10
+			$('#img1').css('padding-right', +pd+'px')
+		})
+		$('#input').on('keyup', function(){
+			$(this).css('color','blue')
+			var txt = $(this).val()
+			$('.pa').text(txt).css('color', 'red')
+		})
+		$('#enter').on('click',function(){
+			$(this).css('background', 'blue')
+			$('#input').find()
+		})
+	</script>
+	
+</body>
+</html>
